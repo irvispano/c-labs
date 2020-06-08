@@ -21,7 +21,7 @@ def generatejwttoken(username):
                 'date': str(datetime.date.today())
             }
         else:
-            print("222222")
+            
             payload = {
                 'iat': datetime.datetime.utcnow(),
                 'jti': jti,
@@ -29,7 +29,7 @@ def generatejwttoken(username):
                 'date': str(datetime.date.today())
             }
         token = jwt.encode(payload, sskey, algorithm='HS512')
-        print("brendatoken",token)
+        
         return token
     except Exception:
         print(Exception)
@@ -53,11 +53,11 @@ def generateroute():
         
       
     except Exception as e:
-        print("eeeee",e)
+        
         return jsonify({
             'status': 'Failure',
             
         })
 
 if __name__ == '__main__':
-    app.run(debug=True,port=80,host='0.0.0.0')
+    app.run(debug=True,port=5000,host='0.0.0.0')
